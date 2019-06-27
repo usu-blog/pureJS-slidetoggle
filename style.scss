@@ -1,0 +1,46 @@
+.blue {
+  color: cornflowerblue;
+}
+
+.toggle {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transition: 0.3s;
+  &__x {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    background: #000;
+    transition: 0.3s;
+  }
+  &__y {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background: #000;
+  }
+  &.-open {
+    transform: rotate(90deg);
+    .toggle__x {
+      opacity: 0;
+    }
+  }
+}
+
+.contents {
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+  &.-open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
